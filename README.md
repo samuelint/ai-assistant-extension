@@ -1,3 +1,3 @@
 # Assistant Base Extension
 
-Base project to extend ai assistant.
+Use this library to add extension to https://github.com/samuelint/ai-assistant.
