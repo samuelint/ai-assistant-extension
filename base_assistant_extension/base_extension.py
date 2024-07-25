@@ -14,6 +14,14 @@ class BaseExtension(ABC):
         pass
 
     @abstractmethod
+    def description(self) -> str:
+        """
+        Will be used by LLM for tool calling selection.
+        It's prefered to have a relevant description
+        """
+        pass
+
+    @abstractmethod
     async def astream(
         self, llm: BaseChatModel, input: ExtensionInput
     ) -> AsyncIterator[BaseMessageChunk]:
