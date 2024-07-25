@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "base-assistant-extension"
-version = "0.1.3"
+version = "0.2.0"
 description = ""
 authors = ["Samuel <samuelint@gmail.com>"]
 readme = "README.md"
