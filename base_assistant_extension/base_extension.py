@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
-from typing import AsyncIterator, TypedDict
-from langchain_core.language_models import BaseChatModel
-from langchain_core.messages import BaseMessage, BaseMessageChunk
+from typing import TypedDict
+from langchain_core.runnables import Runnable
+from langchain_core.messages import BaseMessage
 
 
 class ExtensionInput(TypedDict):
@@ -22,11 +22,5 @@ class BaseExtension(ABC):
         pass
 
     @abstractmethod
-    async def astream(
-        self, llm: BaseChatModel, input: ExtensionInput
-    ) -> AsyncIterator[BaseMessageChunk]:
-        pass
-
-    @abstractmethod
-    async def ainvoke(self, llm: BaseChatModel, input: ExtensionInput) -> BaseMessage:
+    def create_runnable(self) -> Runnable:
         pass
