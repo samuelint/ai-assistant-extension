@@ -1,3 +1,3 @@
-from .base_extension import BaseExtension, ExtensionInput, ExtensionOutput
+from .base_extension import BaseExtension, ExtensionInput
 
-__all__ = ["BaseExtension", "ExtensionInput", "ExtensionOutput"]
+__all__ = ["BaseExtension", "ExtensionInput"]
