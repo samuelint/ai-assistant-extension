@@ -1,6 +1,7 @@
 from abc import ABC, abstractmethod
 from typing import TypedDict
 from langchain_core.runnables import Runnable
+from langchain_core.language_models import BaseChatModel
 from langchain_core.messages import BaseMessage
 
 
@@ -22,5 +23,5 @@ class BaseExtension(ABC):
         pass
 
     @abstractmethod
-    def create_runnable(self) -> Runnable:
+    def create_runnable(self, llm: BaseChatModel) -> Runnable:
         pass
