@@ -3,6 +3,7 @@ name = "base-assistant-extension"
 version = "0.4.0"
 description = ""
 authors = ["Samuel <samuelint@gmail.com>"]
+license = "MIT"
 readme = "README.md"
 
 [tool.poetry.dependencies]
