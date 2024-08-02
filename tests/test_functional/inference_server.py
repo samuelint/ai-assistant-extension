@@ -1,4 +1,3 @@
-from typing import Optional
 from langchain_openai_api_bridge.fastapi.langchain_openai_api_bridge_fastapi import (
     LangchainOpenaiApiBridgeFastAPI,
 )
@@ -10,9 +9,7 @@ from langchain_openai import ChatOpenAI
 class InferenceServer:
     def __init__(
         self,
-        port: Optional[int] = 7777,
     ) -> None:
-        self.port = port
         self.app = FastAPI()
 
         def create_agent(dto: CreateAgentDto):

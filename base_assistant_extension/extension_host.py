@@ -13,12 +13,10 @@ class ExtensionHost:
     def __init__(
         self,
         extension: BaseExtension,
-        port: int,
         inference_url: Optional[str] = None,
         inference_http_client: httpx.Client | None = None,
     ) -> None:
         self.extension = extension
-        self.port = port
 
         self.app = FastAPI()
         self.bridge = LangchainOpenaiApiBridgeFastAPI(

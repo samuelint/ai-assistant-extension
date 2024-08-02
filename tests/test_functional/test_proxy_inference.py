@@ -1,6 +1,6 @@
 from fastapi.testclient import TestClient
 import pytest
-from base_assistant_extension.extension_host import ExtensionHost
+from base_assistant_extension import ExtensionHost
 from openai import OpenAI
 from tests.test_functional.fixture_extension import FixtureExtension
 from tests.test_functional.inference_server import InferenceServer
@@ -19,7 +19,6 @@ def inference_server() -> ExtensionHost:
 def host(inference_server: TestClient) -> ExtensionHost:
     return ExtensionHost(
         extension=FixtureExtension(),
-        port=7680,
         inference_url="http://testserver_inference/openai/v1",
         inference_http_client=inference_server,
     )

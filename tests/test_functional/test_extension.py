@@ -1,6 +1,6 @@
 from fastapi.testclient import TestClient
 import pytest
-from base_assistant_extension.extension_host import ExtensionHost
+from base_assistant_extension import ExtensionHost
 from openai import OpenAI
 from tests.test_functional.fixture_extension import FixtureExtension
 
@@ -9,7 +9,6 @@ from tests.test_functional.fixture_extension import FixtureExtension
 def host() -> ExtensionHost:
     return ExtensionHost(
         extension=FixtureExtension(),
-        port=7680,
     )
 
 
