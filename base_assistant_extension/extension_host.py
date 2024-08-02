@@ -1,5 +1,6 @@
 from typing import Optional
 import httpx
+import uvicorn
 from .extension_agent_factory import ExtensionAgentFactory
 from .extension_metadata import ExtensionMetadata
 from .base_extension import BaseExtension
@@ -13,10 +14,12 @@ class ExtensionHost:
     def __init__(
         self,
         extension: BaseExtension,
+        port: Optional[int] = 7680,
         inference_url: Optional[str] = None,
         inference_http_client: httpx.Client | None = None,
     ) -> None:
         self.extension = extension
+        self.port = port
 
         self.app = FastAPI()
         self.bridge = LangchainOpenaiApiBridgeFastAPI(
@@ -44,3 +47,6 @@ class ExtensionHost:
     def setup(self):
         if hasattr(self.extension, "setup"):
             self.extension.setup()
+
+    def start_server(self):
+        uvicorn.run(self.app, host="localhost", port=self.port)
