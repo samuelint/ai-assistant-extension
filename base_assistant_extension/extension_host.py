@@ -31,6 +31,7 @@ class ExtensionHost:
         )
 
         self._setup_routes()
+        self.setup()
 
     def _setup_routes(self):
         @self.app.get("/metadata")
@@ -45,7 +46,3 @@ class ExtensionHost:
     def setup(self):
         if hasattr(self.extension, "setup"):
             self.extension.setup()
-
-    def teardown(self):
-        if hasattr(self.extension, "teardown"):
-            self.extension.teardown()
