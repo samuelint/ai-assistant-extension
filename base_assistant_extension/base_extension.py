@@ -28,12 +28,6 @@ class BaseExtension(ABC):
         """
         pass
 
-    def teardown(self) -> None:
-        """
-        Called when tearing down the extension
-        """
-        pass
-
     @abstractmethod
     def create_runnable(self, llm: BaseChatModel) -> Runnable:
         pass
