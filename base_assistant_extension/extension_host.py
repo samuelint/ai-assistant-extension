@@ -1,6 +1,5 @@
 from typing import Optional
 import httpx
-import uvicorn
 from .extension_agent_factory import ExtensionAgentFactory
 from .extension_metadata import ExtensionMetadata
 from .base_extension import BaseExtension
@@ -50,6 +49,3 @@ class ExtensionHost:
     def teardown(self):
         if hasattr(self.extension, "teardown"):
             self.extension.teardown()
-
-    def start_server(self):
-        uvicorn.run(self.app, host="localhost", port=self.port)

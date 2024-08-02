@@ -1,5 +1,4 @@
 from typing import Optional
-import uvicorn
 from langchain_openai_api_bridge.fastapi.langchain_openai_api_bridge_fastapi import (
     LangchainOpenaiApiBridgeFastAPI,
 )
@@ -30,10 +29,3 @@ class InferenceServer:
         )
 
         bridge.bind_openai_chat_completion()
-
-    def start_server(self):
-        uvicorn.run(self.app, host="localhost", port=self.port)
-
-
-if __name__ == "__main__":
-    InferenceServer().start_server()
