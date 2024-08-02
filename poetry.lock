@@ -1912,9 +1912,9 @@ doc = ["furo", "jaraco.packaging (>=9.3)", "jaraco.tidelift (>=1.4)", "rst.linke
 test = ["big-O", "importlib-resources", "jaraco.functools", "jaraco.itertools", "jaraco.test", "more-itertools", "pytest (>=6,!=8.1.*)", "pytest-checkdocs (>=2.4)", "pytest-cov", "pytest-enabler (>=2.2)", "pytest-ignore-flaky", "pytest-mypy", "pytest-ruff (>=0.2.1)"]
 
 [extras]
-langchain = ["langchain", "langchain-openai"]
+langchain = ["langchain", "langchain-openai", "langgraph"]
 
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.9,<3.13"
-content-hash = "f4cd6c2ddb1ea7769802883f9df10c5427988f7481d176bbeed29fa79e80ee52"
+content-hash = "7f914281209904ddf79005bce1f0d861c4ab4b0bbb522fb2608204bd618ac934"
