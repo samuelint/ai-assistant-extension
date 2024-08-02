@@ -367,7 +367,7 @@ test = ["pytest (>=6)"]
 name = "fastapi"
 version = "0.112.0"
 description = "FastAPI framework, high performance, easy to learn, fast to code, ready for production"
-optional = false
+optional = true
 python-versions = ">=3.8"
 files = [
     {file = "fastapi-0.112.0-py3-none-any.whl", hash = "sha256:3487ded9778006a45834b8c816ec4a48d522e2631ca9e75ec5a774f1b052f821"},
@@ -1647,7 +1647,7 @@ sqlcipher = ["sqlcipher3_binary"]
 name = "starlette"
 version = "0.37.2"
 description = "The little ASGI library that shines."
-optional = false
+optional = true
 python-versions = ">=3.8"
 files = [
     {file = "starlette-0.37.2-py3-none-any.whl", hash = "sha256:6fe59f29268538e5d0d182f2791a479a0c64638e6935d1c6989e63fb2699c6ee"},
@@ -1950,9 +1950,9 @@ doc = ["furo", "jaraco.packaging (>=9.3)", "jaraco.tidelift (>=1.4)", "rst.linke
 test = ["big-O", "importlib-resources", "jaraco.functools", "jaraco.itertools", "jaraco.test", "more-itertools", "pytest (>=6,!=8.1.*)", "pytest-checkdocs (>=2.4)", "pytest-cov", "pytest-enabler (>=2.2)", "pytest-ignore-flaky", "pytest-mypy", "pytest-ruff (>=0.2.1)"]
 
 [extras]
-langchain = ["langchain", "langchain-openai", "langgraph"]
+host-dependencies = ["fastapi", "langchain", "langchain-openai", "langgraph"]
 
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.9,<3.13"
-content-hash = "26a2cd408caf33648052b78edeed6dbf52949ebff19af513204b90f9981ff15e"
+content-hash = "6a55aec01540b6e61d2074d70dbf5efcecf23c232b486d4d83177b321d3137a0"
